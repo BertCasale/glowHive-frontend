@@ -1,5 +1,5 @@
 export default function NavBar() {
-  return (<div className="NavBar">
+  return (<nav className="NavBar">
     NavBar
-  </div>)
+  </nav>)
 }

@@ -1,5 +1,5 @@
 export default function NotFound() {
   return (<div className="NotFound">
-    NotFound
+    404 NotFound
   </div>)
 }
