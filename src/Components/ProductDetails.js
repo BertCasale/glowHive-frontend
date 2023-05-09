@@ -1,18 +1,69 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import veganLogo from "../assets/vegan.png";
+import nonToxicLogo from "../assets/non-toxic.png";
+import crueltyFree from "../assets/cruelty-free.png";
 
 export default function ProductDetails() {
-  const API = process.env.REACT_APP_API_URL;
+  const [product, setProduct] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [product, setProduct] = useState([]);
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios
-      .get(`${API}/products/${id}`)
-      .then((res) => setProduct(res.data), [id, navigate, API]);
-  });
+    axios.get(`${API}/products/${id}`).then((res) => {
+      setProduct(res.data);
+    });
+  }, [id, API]);
 
-  return <div className="ProductDetails">ProductDetails</div>;
+  const deleteProduct = () => {
+    axios
+      .delete(`${API}/products/${id}`)
+      .then(() => navigate(`/products`))
+      .catch((e) => console.warn("error", e));
+  };
+
+  const delteHandler = () => {
+    deleteProduct();
+  };
+
+  return (
+    <div className="ProductDetails">
+      <h1 className="product-name">{product.name}</h1>
+      <h3>{product.brand}</h3>
+      <h6>{product.type}</h6>
+
+      <img
+        className="product-image"
+        src={product.image_url}
+        alt={product.name}
+      />
+      {/* if price is < Budget Fridenly */}
+      <h4>${product.price}</h4>
+      <h5>{product.size_in_oz} oz </h5>
+
+      <div className="Logo-Highlights">
+        {product.vegan && veganLogo}
+        {product.non_toxic && nonToxicLogo}
+        {product.cruelty_free && crueltyFree}
+      </div>
+      <div className="showNavigation">
+        <div>
+          {" "}
+          <Link to={`/products`}>
+            <button>Home</button>
+          </Link>
+        </div>
+        <div>
+          <Link to={`/products/${id}/edit`}>
+            <button>Edit</button>
+          </Link>
+        </div>
+        <div>
+          <button onClick={delteHandler}>Delete</button>
+        </div>
+      </div>
+    </div>
+  );
 }
