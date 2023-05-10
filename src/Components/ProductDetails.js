@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./ProductDetails.css";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import veganLogo from "../assets/vegan.png";
 import nonToxicLogo from "../assets/non-toxic.png";
