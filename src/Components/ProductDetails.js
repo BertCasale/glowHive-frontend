@@ -4,18 +4,24 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import veganLogo from "../assets/vegan.png";
 import nonToxicLogo from "../assets/non-toxic.png";
 import crueltyFree from "../assets/cruelty-free.png";
-
+const API = process.env.REACT_APP_API_URL;
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
-  const API = process.env.REACT_APP_API_URL;
 
+  console.log(API);
   useEffect(() => {
-    axios.get(`${API}/products/${id}`).then((res) => {
-      setProduct(res.data);
-    });
-  }, [id, API]);
+    axios
+      .get(`${API}/products/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setProduct(res.data);
+      })
+      .catch((e) => {
+        console.warn("error", e);
+      });
+  }, [id]);
 
   const deleteProduct = () => {
     axios
@@ -39,14 +45,19 @@ export default function ProductDetails() {
         src={product.image_url}
         alt={product.name}
       />
+      <h4>{product.details}</h4>
       {/* if price is < Budget Fridenly */}
       <h4>${product.price}</h4>
       <h5>{product.size_in_oz} oz </h5>
 
       <div className="Logo-Highlights">
-        {product.vegan && veganLogo}
-        {product.non_toxic && nonToxicLogo}
-        {product.cruelty_free && crueltyFree}
+        {product.vegan ? <img alt="vegan logo" src={veganLogo} /> : null}
+        {product.non_toxic ? (
+          <img alt="non toxic logo" src={nonToxicLogo} />
+        ) : null}
+        {product.cruelty_free ? (
+          <img alt="cruelty free logo" src={crueltyFree} />
+        ) : null}
       </div>
       <div className="showNavigation">
         <div>
