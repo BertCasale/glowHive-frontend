@@ -1,4 +1,27 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const API = process.env.REACT_APP_API_URL;
+
 export default function ProductNewForm() {
+  const navigate = useNavigate();
+  const [product, setProduct] = useState({
+    name: "",
+    brand: "",
+    image_url: "",
+    price: 0,
+    details: "",
+    size_in_oz: 0,
+    type: "",
+    vegan: false,
+    is_cruelty_free: false,
+    non_toxic: false,
+    ingredients: "",
+  });
+
+
+
   return (<div className="ProductNewForm">
     <form>
 
