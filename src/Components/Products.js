@@ -1,4 +1,5 @@
 import Product from "./Product";
+import Filters from "./Filters";
 import "./Product.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -19,10 +20,13 @@ export default function Products() {
   }, [API]);
 
   return (
-    <div className="Products">
-      {products.map((product) => {
-        return <Product key={product.id} product={product} />;
-      })}
-    </div>
+    <>
+      <Filters />
+      <div className="Products">
+        {products.map((product) => {
+          return <Product key={product.id} product={product} />;
+        })}
+      </div>
+    </>
   );
 }
