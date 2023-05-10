@@ -116,7 +116,7 @@ export default function ProductNewForm() {
         name="vegan" 
         id="vegan" 
         type="checkbox"
-        value={product.vegan}
+        checked={product.vegan}
         onChange={handleCheckboxChange}/>
 
       <label htmlFor="is_cruelty_free">Cruelty Free:</label>
@@ -124,7 +124,7 @@ export default function ProductNewForm() {
         name="is_cruelty_free" 
         id="is_cruelty_free" 
         type="checkbox"
-        value={product.is_cruelty_free}
+        checked={product.is_cruelty_free}
         onChange={handleCheckboxChange}/>
 
       <label htmlFor="non_toxic">Non Toxic:</label>
@@ -132,7 +132,7 @@ export default function ProductNewForm() {
         name="non_toxic" 
         id="non_toxic" 
         type="checkbox"
-        value={product.non_toxic}
+        checked={product.non_toxic}
         onChange={handleCheckboxChange}/>
 
       <label htmlFor="ingredients">Ingredients:</label>
