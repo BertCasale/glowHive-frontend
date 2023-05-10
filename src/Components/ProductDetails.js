@@ -55,7 +55,7 @@ export default function ProductDetails() {
         {product.non_toxic ? (
           <img alt="non toxic logo" src={nonToxicLogo} />
         ) : null}
-        {product.cruelty_free ? (
+        {product.is_cruelty_free ? (
           <img alt="cruelty free logo" src={crueltyFree} />
         ) : null}
       </div>
