@@ -1,4 +1,6 @@
 import Product from "./Product";
+import Filters from "./Filters";
+import "./Product.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Products.css"
@@ -20,8 +22,9 @@ export default function Products() {
   }, [API]);
 
   return (
-    <div className="Products">
 
+    <div className="Products">
+      <Filters />
         <div className=" d-flex flex-wrap">
           
           {products.map((product) => {

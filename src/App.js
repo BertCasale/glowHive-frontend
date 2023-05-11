@@ -1,36 +1,35 @@
-import './App.css';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import NavBar from './Components/NavBar';
-import Home from './Pages/Home';
-import NotFound from './Pages/NotFound';
-import Index from './Pages/Index';
-import Show from './Pages/Show';
-import New from './Pages/New';
-import Edit from './Pages/Edit';
+import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
+import NotFound from "./Pages/NotFound";
+import Index from "./Pages/Index";
+import Show from "./Pages/Show";
+import New from "./Pages/New";
+import Edit from "./Pages/Edit";
+import Search from "./Pages/Search";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
         <header>
-          <NavBar/>
+          <NavBar />
         </header>
-        
-        <main>  
+
+        <main>
           <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Index />} />
+            <Route path="/products/search" element={<Search />} />
+            <Route path="/products/:id" element={<Show />} />
 
-            <Route path='/' element={<Home/>}/>
-            <Route path='/products' element={<Index/>}/>
-            <Route path='/products/:id' element={<Show/>}/>
-            <Route path='/products/:id/edit' element={<Edit/>}/>
-            <Route path='/products/new' element={<New/>}/>
-            <Route path='*' element={<NotFound/>}/>
-
+            <Route path="/products/:id/edit" element={<Edit />} />
+            <Route path="/products/new" element={<New />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-
       </BrowserRouter>
     </div>
   );
