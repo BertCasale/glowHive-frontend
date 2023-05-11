@@ -1,0 +1,25 @@
+.Product .product-card{
+  box-shadow: 2px 2px 10px 1px black;
+  max-width: 300px;
+  text-align: left;
+  background-color: #F6D33C;
+  color: black;
+  transition: all .5s ease-in-out;
+  margin: 40px;
+}
+
+.Product:hover .product-card{
+  transform: scale(1.1);
+}
+
+.Product img {
+  max-height: 200px;
+}
+
+.Product .image {
+  text-align: center;
+}
+
+a:hover{
+  text-decoration: none;
+}
