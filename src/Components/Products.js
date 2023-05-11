@@ -3,8 +3,10 @@ import Filters from "./Filters";
 import "./Product.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./Products.css"
 const API = process.env.REACT_APP_API_URL;
 console.log(API);
+
 export default function Products() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -20,13 +22,16 @@ export default function Products() {
   }, [API]);
 
   return (
-    <>
+
+    <div className="Products">
       <Filters />
-      <div className="Products">
-        {products.map((product) => {
-          return <Product key={product.id} product={product} />;
-        })}
-      </div>
-    </>
+        <div className=" d-flex flex-wrap">
+          
+          {products.map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
+        </div>
+
+    </div>
   );
 }

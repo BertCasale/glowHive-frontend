@@ -1,0 +1,13 @@
+.ProductDetails .Logo-Highlights img{
+  width: 100px;
+  margin: 10px;
+}
+
+.ProductDetails .information {
+  margin-top: 40px;
+}
+
+.ProductDetails .showNavigation button{
+  background-color: #F6D33C;
+  margin-bottom: 5px;
+}

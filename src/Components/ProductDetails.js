@@ -5,7 +5,9 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import veganLogo from "../assets/vegan.png";
 import nonToxicLogo from "../assets/non-toxic.png";
 import crueltyFree from "../assets/cruelty-free.png";
+import "./ProductDetails.css";
 const API = process.env.REACT_APP_API_URL;
+
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
@@ -31,35 +33,47 @@ export default function ProductDetails() {
       .catch((e) => console.warn("error", e));
   };
 
-  const delteHandler = () => {
+  const deleteHandler = () => {
     deleteProduct();
   };
 
   return (
     <div className="ProductDetails">
-      <h1 className="product-name">{product.name}</h1>
-      <h3>{product.brand}</h3>
-      <h6>{product.type}</h6>
 
-      <img
-        className="product-image"
-        src={product.image_url}
-        alt={product.name}
-      />
-      <h4>{product.details}</h4>
-      {/* if price is < Budget Fridenly */}
-      <h4>${product.price}</h4>
-      <h5>{product.size_in_oz} oz </h5>
+      <div className="container text-left">
+        <div className="row">
+
+          <div className="col">
+            <img
+              className="product-image img-fluid"
+              src={product.image_url}
+              alt={product.name}/>
+          </div>
+
+          <div className="col information">
+            <h2 className="product-name">{product.name}</h2>
+            <h4>{product.brand}</h4>
+            <h6>{product.type}</h6>
+
+            {/* if price is < Budget Fridenly */}
+            <h4>${product.price}</h4>
+            <h5>{product.size_in_oz} oz </h5>
+            <h6>{product.details}</h6>
+
+          </div>
+        </div>
+      </div>
 
       <div className="Logo-Highlights">
-        {product.vegan ? <img alt="vegan logo" src={veganLogo} /> : null}
+        {product.vegan ? <img alt="vegan logo" src={veganLogo} title="Vegan"/> : null}
         {product.non_toxic ? (
-          <img alt="non toxic logo" src={nonToxicLogo} />
+          <img alt="non toxic logo" src={nonToxicLogo} title="Non Toxic"/>
         ) : null}
         {product.is_cruelty_free ? (
-          <img alt="cruelty free logo" src={crueltyFree} />
+          <img alt="cruelty free logo" src={crueltyFree} title="Cruelty Free"/>
         ) : null}
       </div>
+
       <div className="showNavigation">
         <div>
           {" "}
@@ -73,9 +87,10 @@ export default function ProductDetails() {
           </Link>
         </div>
         <div>
-          <button onClick={delteHandler}>Delete</button>
+          <button onClick={deleteHandler}>Delete</button>
         </div>
       </div>
+
     </div>
   );
 }

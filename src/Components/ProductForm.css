@@ -1,0 +1,9 @@
+.ProductNewForm, .ProductEditForm {
+  text-align: left;
+  margin: 0px 100px;
+}
+
+.ProductNewForm .submit-button,  .ProductEditForm .submit-button{
+  background-color: #F6D33C;
+  margin: 5px 0px 30px;
+}
