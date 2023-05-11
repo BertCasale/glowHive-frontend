@@ -64,12 +64,12 @@ export default function ProductDetails() {
       </div>
 
       <div className="Logo-Highlights">
-        {product.vegan ? <img alt="vegan logo" src={veganLogo} /> : null}
+        {product.vegan ? <img alt="vegan logo" src={veganLogo} title="Vegan"/> : null}
         {product.non_toxic ? (
-          <img alt="non toxic logo" src={nonToxicLogo} />
+          <img alt="non toxic logo" src={nonToxicLogo} title="Non Toxic"/>
         ) : null}
         {product.is_cruelty_free ? (
-          <img alt="cruelty free logo" src={crueltyFree} />
+          <img alt="cruelty free logo" src={crueltyFree} title="Cruelty Free"/>
         ) : null}
       </div>
 
