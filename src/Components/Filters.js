@@ -1,16 +1,20 @@
+import { useEffect, useState } from "react";
 const Filters = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {});
   return (
     <aside>
       <label>
-        <input type="checkbox" name="product" value="Moisturizers" />
+        <input type="radio" name="type" value="Moisturizers" />
         Moisturizers
       </label>
       <label>
-        <input type="checkbox" name="product" value="Toners" />
+        <input type="radio" name="type" value="Toners" />
         Toners
       </label>
       <label>
-        <input type="checkbox" name="product" value="Cleansers" />
+        <input type="radio" name="type" value="Cleansers" />
         Cleansers
       </label>
       <label>
