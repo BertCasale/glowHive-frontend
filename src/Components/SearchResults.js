@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSearchParams, Link } from "react-router-dom";
+import Product from "./Product";
+import "./SearchResults.css"
 const API = process.env.REACT_APP_API_URL;
 const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -13,23 +15,16 @@ const SearchResults = () => {
     });
   }, [q]);
   return (
-    <div>
+    <div className="SearchResults">
       <h1>Results </h1>
-      <ul>
+      <div className=" d-flex flex-wrap">
         {searchResults.map((searchResult) => {
           console.log(searchResult);
           return (
-            <li key={searchResult.id}>
-              <Link to={`/products/${searchResult.id}`}>
-                <h2> {searchResult.name}</h2>
-                <img src={searchResult.image_url} />
-                <h3>${searchResult.price}</h3>
-              </Link>
-            </li>
+            <Product product={searchResult} key={searchResult.id}/>
           );
         })}
-      </ul>
-      <p>Testing</p>
+      </div>
     </div>
   );
 };
