@@ -27,10 +27,12 @@ export default function ProductDetails() {
   }, [id]);
 
   const deleteProduct = () => {
-    axios
-      .delete(`${API}/products/${id}`)
-      .then(() => navigate(`/products`))
-      .catch((e) => console.warn("error", e));
+    if (window.confirm("Are you sure you want to delete?")) {
+      axios
+        .delete(`${API}/products/${id}`)
+        .then(() => navigate(`/products`))
+        .catch((e) => console.warn("error", e));
+    }
   };
 
   const deleteHandler = () => {
@@ -39,15 +41,14 @@ export default function ProductDetails() {
 
   return (
     <div className="ProductDetails">
-
       <div className="container text-left">
         <div className="row">
-
           <div className="col">
             <img
               className="product-image img-fluid"
               src={product.image_url}
-              alt={product.name}/>
+              alt={product.name}
+            />
           </div>
 
           <div className="col information">
@@ -59,18 +60,19 @@ export default function ProductDetails() {
             <h4>${product.price}</h4>
             <h5>{product.size_in_oz} oz </h5>
             <h6>{product.details}</h6>
-
           </div>
         </div>
       </div>
 
       <div className="Logo-Highlights">
-        {product.vegan ? <img alt="vegan logo" src={veganLogo} title="Vegan"/> : null}
+        {product.vegan ? (
+          <img alt="vegan logo" src={veganLogo} title="Vegan" />
+        ) : null}
         {product.non_toxic ? (
-          <img alt="non toxic logo" src={nonToxicLogo} title="Non Toxic"/>
+          <img alt="non toxic logo" src={nonToxicLogo} title="Non Toxic" />
         ) : null}
         {product.is_cruelty_free ? (
-          <img alt="cruelty free logo" src={crueltyFree} title="Cruelty Free"/>
+          <img alt="cruelty free logo" src={crueltyFree} title="Cruelty Free" />
         ) : null}
       </div>
 
@@ -90,7 +92,6 @@ export default function ProductDetails() {
           <button onClick={deleteHandler}>Delete</button>
         </div>
       </div>
-
     </div>
   );
 }
