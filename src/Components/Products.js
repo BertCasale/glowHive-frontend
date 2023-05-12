@@ -5,7 +5,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Products.css"
 const API = process.env.REACT_APP_API_URL;
-console.log(API);
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -13,7 +12,6 @@ export default function Products() {
     axios
       .get(`${API}/products`)
       .then((res) => {
-        console.log(res.data);
         setProducts(res.data);
       })
       .catch((e) => {
@@ -22,16 +20,16 @@ export default function Products() {
   }, [API]);
 
   return (
-
     <div className="Products">
-      <Filters />
-        <div className=" d-flex flex-wrap">
-          
+      <div className="d-flex">
+        <Filters products={products} setProducts={setProducts}/>
+        <div className="all-products d-flex flex-wrap">
+            
           {products.map((product) => {
             return <Product key={product.id} product={product} />;
           })}
         </div>
-
+      </div>
     </div>
   );
 }
