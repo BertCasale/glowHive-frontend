@@ -16,7 +16,6 @@ const SearchResults = () => {
   }, [q]);
   return (
     <div className="SearchResults">
-      <h1>Results </h1>
       <div className=" d-flex flex-wrap">
         {searchResults.map((searchResult) => {
           console.log(searchResult);

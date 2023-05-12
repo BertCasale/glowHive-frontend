@@ -36,12 +36,13 @@ export default function SearchSuggestion({searchTerm, setSearchTerm}) {
 
   return (<div className={`SearchSuggestion ${searchTerm ? "visible" : "invisible"} d-flex justify-content-center`}>
     <div className="position-absolute dropdown" >
+      
       {!suggestedProducts[0] ?
       <span className="dropdown-item-text">No results found.</span>:
       (suggestedProducts.map((product)=> {
-        return (<Link to={`/products/${product.id}`} key={product.id}>
+        return (<Link to={`/products/${product.id}`} onClick={resetSearchBox} key={product.id}>
           
-          <span className="dropdown-item" onClick={resetSearchBox}><img alt={product.name} src={product.image_url}/>{product.name}</span>
+          <span className="dropdown-item" ><img alt={product.name} src={product.image_url}/>{product.name}</span>
 
         </Link>);
         }))

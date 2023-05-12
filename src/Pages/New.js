@@ -1,3 +1,4 @@
+import "./New.css";
 import ProductNewForm from "../Components/ProductNewForm";
 
 export default function New() {

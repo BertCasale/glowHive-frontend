@@ -1,3 +1,4 @@
+import "./Index.css";
 import Products from "../Components/Products"
 
 export default function Index() {
