@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Product from "./Product";
 import "./SearchResults.css"
 const API = process.env.REACT_APP_API_URL;

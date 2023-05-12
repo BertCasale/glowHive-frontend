@@ -1,0 +1,22 @@
+.SearchSuggestion {
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown {
+  z-index: 10000;
+}
+
+.dropdown-item, .dropdown-item-text {
+  max-width: 500px;
+  background-color: #FAD15F;
+  outline: solid 1px black;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+
+}
+
+.dropdown-item img {
+  height: 50px;
+}
