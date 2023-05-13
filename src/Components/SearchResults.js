@@ -17,12 +17,14 @@ const SearchResults = () => {
   return (
     <div className="SearchResults">
       <div className=" d-flex flex-wrap">
-        {searchResults.map((searchResult) => {
+        {searchResults[0] ? 
+        searchResults.map((searchResult) => {
           console.log(searchResult);
           return (
             <Product product={searchResult} key={searchResult.id}/>
           );
-        })}
+        }):
+        <h2>No results were found. Try changing your search.</h2>}
       </div>
     </div>
   );
