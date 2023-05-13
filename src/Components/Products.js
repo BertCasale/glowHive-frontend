@@ -24,7 +24,7 @@ export default function Products() {
   return (
     <div className="Products">
       <div className="d-flex">
-        <Filters products={products} setProducts={setProducts} allProducts={allProducts}/>
+        <Filters setProducts={setProducts} allProducts={allProducts}/>
         <div className="all-products d-flex flex-wrap">
           
           {products[0] ? 
