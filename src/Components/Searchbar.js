@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchSuggestion from "./SearchSuggestion";
+import "./Searchbar.css"
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +17,7 @@ function SearchBar() {
     setSearchTerm("");
   };
 
-  return (<div>
+  return (<div className="Searchbar">
       <form onSubmit={handleSearchSubmit}>
         <input
           type="search"
