@@ -1,3 +1,4 @@
+import "./Show.css";
 import ProductDetails from "../Components/ProductDetails";
 
 export default function Show() {

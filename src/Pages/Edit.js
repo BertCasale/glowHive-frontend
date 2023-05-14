@@ -1,3 +1,4 @@
+import "./Edit.css";
 import ProductEditForm from "../Components/ProductEditForm";
 
 export default function Edit() {
