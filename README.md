@@ -10,7 +10,6 @@ Welcome to Glow Hive!
 
 Created by Bert and Laura.
 
-Here's the corrected version of the text:
 
 Our site is a community-run skin care platform that aims to inform others about the latest skin care products to help them achieve glowing skin. Once you land on the site, you can see all of the products that are offered. You can use our filter to sort the products by type and look for special features such as whether it's vegan, non-toxic, or cruelty-free. Using the search bar, you can also search for a product by type, brand, or name.
 
