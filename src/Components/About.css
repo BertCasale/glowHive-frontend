@@ -1,0 +1,64 @@
+.about {
+  margin-bottom: 50px;
+}
+
+p {
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0;
+  color: #f5c036;
+}
+
+.github {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #f5c036;
+}
+
+.founders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.founders img {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px #f5c036;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #f5c036;
+}
+
+a:hover img {
+  opacity: 0.8;
+  border: 2px solid #f5c036;
+}
+.founders {
+  display: flexbox;
+  margin: 0 auto 20px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px #f5c036;
+}

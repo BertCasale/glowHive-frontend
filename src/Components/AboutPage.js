@@ -1,8 +1,10 @@
 import laura from "../assets/GH_founder.jpg";
 import bert from "../assets/Bert-Casale.jpg";
-const About = () => {
+import github from "../assets/github-logo.png";
+import "./About.css";
+const AboutPage = () => {
   return (
-    <>
+    <div className="container">
       <h1>Glow Hive</h1>
       <div className="about">
         <p>
@@ -34,10 +36,20 @@ const About = () => {
       </div>
       <div>
         <h2>Founders</h2>
-        <img src={bert} alt="Bert Casale headshot" />
+        <img className="founders" src={bert} alt="Bert Casale headshot" />
+        <a href="https://github.com/BertCasale">
+          {" "}
+          <img className="github" src={github} alt="github ßlogo" />
+        </a>
+
         <h3>Bert Casale</h3>
 
-        <img src={laura} alt=" laura williams headshot" />
+        <img className="founders" src={laura} alt=" laura williams headshot" />
+        <a href="https://github.com/laura-williams-1">
+          {" "}
+          <img className="github" alt="github logo" src={github} />
+        </a>
+
         <h3>Laura Williams </h3>
 
         <p>
@@ -50,7 +62,7 @@ const About = () => {
           technology.
         </p>
       </div>
-    </>
+    </div>
   );
 };
-export default About;
+export default AboutPage;

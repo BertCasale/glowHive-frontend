@@ -9,6 +9,7 @@ import Show from "./Pages/Show";
 import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import Search from "./Pages/Search";
+import About from "./Components/AboutPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Index />} />
+            <Route path="/about" element={<About />} />
             <Route path="/products/search" element={<Search />} />
             <Route path="/products/:id" element={<Show />} />
 
