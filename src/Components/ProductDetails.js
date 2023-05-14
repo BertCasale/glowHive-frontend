@@ -45,7 +45,7 @@ export default function ProductDetails() {
 
   return (
     <div className="ProductDetails">
-      <button onClick={handleDeleteModalShow}>Delete</button>
+      &nbsp;&nbsp; &nbsp;&nbsp;
       <DeleteModal
         show={showDeleteModal}
         handleClose={handleDeleteModalClose}
@@ -75,7 +75,6 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-
       <div className="Logo-Highlights">
         {product.vegan ? (
           <img alt="vegan logo" src={veganLogo} title="Vegan" />
@@ -87,7 +86,6 @@ export default function ProductDetails() {
           <img alt="cruelty free logo" src={crueltyFree} title="Cruelty Free" />
         ) : null}
       </div>
-
       <div className="showNavigation">
         <div>
           {" "}
