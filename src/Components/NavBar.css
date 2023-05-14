@@ -1,0 +1,20 @@
+.NavBar button{
+  background-color: #F6D33C;
+
+}
+
+.NavBar img {
+  margin-left: 0;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  gap: 10px;
+}
+
+.NavBar .searchbar {
+  flex-grow: 1;
+}
