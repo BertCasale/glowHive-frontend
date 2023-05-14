@@ -1,0 +1,17 @@
+.Filters{
+  text-align: left;
+  width: 160px;
+  margin: 30px 0px 0 20px;
+  outline: ridge 3px #FAD15F;
+  height: 100%;
+}
+
+.Filters .types  {
+  outline: solid 1px #F6D33C;
+  width: 150px;
+  margin-top: 5px;
+}
+.Filters .product-labels, .Filters .types {
+  padding-left: 10px;
+  margin-left: 5px;
+}
