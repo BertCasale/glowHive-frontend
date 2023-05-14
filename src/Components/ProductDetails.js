@@ -45,7 +45,6 @@ export default function ProductDetails() {
 
   return (
     <div className="ProductDetails">
-      <button onClick={handleDeleteModalShow}>Delete</button>
       <DeleteModal
         show={showDeleteModal}
         handleClose={handleDeleteModalClose}
