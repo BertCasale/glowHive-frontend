@@ -1,10 +1,12 @@
 # glowHive-frontend
 
-Link to Backend - https://github.com/laura-williams-1/glowHive-backend
+[Our Site](https://glowhive.netlify.app/)
 
-Link to Trello- https://trello.com/b/nTkNYWRD/glowhive
+[Link to Backend](https://github.com/laura-williams-1/glowHive-backend)
 
-Link to Figma-https://www.figma.com/file/ZwjNNNpaYScOCtAwSrf3rR/Design?type=design&node-id=0-1&t=OmuqxijdVK8hhOnB-0
+[Link to Trello](https://trello.com/b/nTkNYWRD/glowhive)
+
+[Link to Figma](https://www.figma.com/file/ZwjNNNpaYScOCtAwSrf3rR/Design?type=design&node-id=0-1&t=OmuqxijdVK8hhOnB-0)
 
 Welcome to Glow Hive!
 
