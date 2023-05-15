@@ -7,7 +7,6 @@ import nonToxicLogo from "../assets/non-toxic.png";
 import crueltyFree from "../assets/cruelty-free.png";
 import DeleteModal from "./DeleteModal";
 import "./ProductDetails.css";
-import ModalDelete from "./DeleteModal";
 const API = process.env.REACT_APP_API_URL;
 
 export default function ProductDetails() {
@@ -16,12 +15,10 @@ export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  console.log(API);
   useEffect(() => {
     axios
       .get(`${API}/products/${id}`)
       .then((res) => {
-        console.log(res.data);
         setProduct(res.data);
       })
       .catch((e) => {
@@ -66,10 +63,8 @@ export default function ProductDetails() {
             <h4>{product.brand}</h4>
             <h6>{product.type}</h6>
             {/* if price is < Budget Fridenly */}
-            <p>
               {" "}
               <h4>${product.price}&nbsp;USD</h4>
-            </p>
             <p>Size {product.size_in_oz}oz </p>
             <h6>{product.details}</h6>
           </div>

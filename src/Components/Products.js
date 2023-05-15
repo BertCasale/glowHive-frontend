@@ -19,7 +19,7 @@ export default function Products() {
       .catch((e) => {
         console.warn("error", e);
       });
-  }, [API]);
+  }, []);
 
   return (
     <div className="Products">
