@@ -67,7 +67,7 @@ const Filters = ({ setProducts, allProducts}) => {
     }
     
     setProducts(filteredProducts);
-  }, [filters]);
+  }, [filters, allProducts, setProducts]);
 
   const handleCheckboxChange = (event) => {
     setFilters({...filters, [event.target.id]: event.target.checked});
